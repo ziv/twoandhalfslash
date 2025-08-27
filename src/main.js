@@ -8,7 +8,7 @@ async function main() {
     const res = await fetch('/example.code');
     const code = await res.text();
     const html = await codeToHtml(code, options);
-    document.querySelector('#app').innerHTML = twoandhalfslash(html);
+    document.querySelector('#app').innerHTML = html; //twoandhalfslash(html);
 }
 
 main().catch(console.error);
