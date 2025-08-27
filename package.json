@@ -1,6 +1,6 @@
 {
   "name": "twoandhalfslash",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "type": "module",
   "exports": "./twoandhalfslash.es.js",
   "types": "./twoandhalfslash.es.d.ts",

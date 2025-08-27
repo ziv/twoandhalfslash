@@ -2,7 +2,7 @@ import "./style.css";
 import {codeToHtml} from 'shiki'
 import {twoandhalfslash} from "./lib.js";
 
-const options = {theme: 'github-light', lang: 'javascript', transformers: [twoandhalfslash]};
+const options = {theme: 'github-light', lang: 'javascript', transformers: [twoandhalfslash()]};
 
 async function main() {
     const res = await fetch('/example.code');

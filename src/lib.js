@@ -76,7 +76,7 @@ function addComponents(html) {
     return root.innerHTML;
 }
 
-const twoandhalfslash = {
+const transformer = {
     line(node, _) {
         // if (node.children.length !== 1) {
         //     return;
@@ -95,6 +95,10 @@ const twoandhalfslash = {
     postprocess(html) {
         return addComponents(html);
     }
+}
+
+function twoandhalfslash() {
+    return transformer;
 }
 
 export {twoandhalfslash};
