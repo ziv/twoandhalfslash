@@ -45,5 +45,8 @@
       "@semantic-release/npm",
       "@semantic-release/github"
     ]
+  },
+  "dependencies": {
+    "@xprng/code": "^3.3.0"
   }
 }

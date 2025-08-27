@@ -2,7 +2,6 @@ function number(n, defaultValue = 0) {
     return isNaN(parseFloat(n)) ? defaultValue : parseFloat(n);
 }
 
-
 function text(args) {
     const [x, y, text] = args;
     const span = document.createElement('span');
@@ -41,7 +40,7 @@ function ellipse(args) {
 }
 
 
-function twoandhalfslash(html) {
+function addComponents(html) {
     const root = document.createElement('div');
     root.innerHTML = html;
 
@@ -77,7 +76,7 @@ function twoandhalfslash(html) {
     return root.innerHTML;
 }
 
-const thsTransformer = {
+const twoandhalfslash = {
     line(node, _) {
         // if (node.children.length !== 1) {
         //     return;
@@ -92,7 +91,10 @@ const thsTransformer = {
         this.addClassToHast(node, 'ths')
         node.properties['data-ths'] = target.value.trim().substring(4).trim();
         target.value = ""; // make the line height 0
+    },
+    postprocess(html) {
+        return addComponents(html);
     }
 }
 
-export {thsTransformer, twoandhalfslash};
+export {twoandhalfslash};
