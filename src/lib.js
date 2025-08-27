@@ -1,3 +1,8 @@
+function number(n, defaultValue = 0) {
+    return isNaN(parseFloat(n)) ? defaultValue : parseFloat(n);
+}
+
+
 function text(args) {
     const [x, y, text] = args;
     const span = document.createElement('span');
@@ -36,16 +41,12 @@ function ellipse(args) {
 }
 
 
-function number(n, defaultValue = 0) {
-    return isNaN(parseFloat(n)) ? defaultValue : parseFloat(n);
-}
-
-
 function twoandhalfslash(html) {
     const root = document.createElement('div');
     root.innerHTML = html;
 
     for (const el of root.querySelectorAll('.ths')) {
+
         const next = el.nextElementSibling; // next line
         if (!next || !next.classList.contains('line')) {
             continue;
@@ -76,11 +77,11 @@ function twoandhalfslash(html) {
     return root.innerHTML;
 }
 
-const transformer = {
+const thsTransformer = {
     line(node, _) {
-        if (node.children.length !== 1) {
-            return;
-        }
+        // if (node.children.length !== 1) {
+        //     return;
+        // }
         const target = node.children?.[0]?.children?.[0];
         if (!target || target.type !== "text") {
             return;
@@ -89,9 +90,9 @@ const transformer = {
             return;
         }
         this.addClassToHast(node, 'ths')
-        node.properties['data-ths'] = target.value.substring(4).trim();
+        node.properties['data-ths'] = target.value.trim().substring(4).trim();
         target.value = ""; // make the line height 0
     }
 }
 
-export {transformer, twoandhalfslash};
+export {thsTransformer, twoandhalfslash};

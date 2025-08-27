@@ -1,8 +1,8 @@
 import "./style.css";
 import {codeToHtml} from 'shiki'
-import {transformer, twoandhalfslash} from "./lib.js";
+import {thsTransformer, twoandhalfslash} from "./lib.js";
 
-const options = {theme: 'nord', lang: 'javascript', transformers: [transformer]};
+const options = {theme: 'nord', lang: 'javascript', transformers: [thsTransformer]};
 
 async function main() {
     const res = await fetch('/example.code');

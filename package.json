@@ -1,15 +1,48 @@
 {
   "name": "twoandhalfslash",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
+  "exports": "./twoandhalfslash.es.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp package*json dist/.",
     "preview": "vite preview"
   },
+  "sideEffects": false,
   "devDependencies": {
     "shiki": "^3.12.0",
     "vite": "^7.1.2"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "Ziv Perry",
+  "license": "MIT",
+  "keywords": [
+    "twoandhalfslash",
+    "shiki",
+    "highlight",
+    "source"
+  ],
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ziv/twoandhalfslash.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ziv/twoandhalfslash/issues"
+  },
+  "homepage": "https://github.com/ziv/twoandhalfslash#readme",
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ]
   }
 }

@@ -1,18 +1,17 @@
-import transformer from "./transformer.ts";
-import twoandhalfslash from "./twoandhalfslash.ts";
+import "./style.css";
+import {codeToHtml} from 'shiki'
+import {thsTransformer, twoandhalfslash} from "./lib.js";
+
+//\\ elp|40|-2.5|140|50|red|1
+const options = {theme: 'nord', lang: 'javascript', transformers: [thsTransformer]};
 
 async function main() {
-    const res = await fetch('/main.ts');
-    const text = await res.text();
-//\\ elp|13.5|1.5|100|40|red|1
-    const html = await codeToHtml(text, {
-         lang: 'typescript',
-         theme: 'github-light',
-         transformers: [transformer]
-    }).then(i => i);
-//\\ txt|40|2|two and a half slash!
-    document.querySelector<HTMLDivElement>('#app')!.innerHTML = twoandhalfslash(html);
-
+    const res = await fetch('/example.code');
+    const code = await res.text();
+    const html = await codeToHtml(code, options);
+    //\\ txt|30|2|two and a half slash!
+    document.querySelector('#app').innerHTML = twoandhalfslash(html);
 }
 
-main().catch(console.error);%
+main().catch(console.error);
+
