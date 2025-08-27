@@ -4,6 +4,10 @@
     --ths-border-color: #595151;
 }
 
+pre {
+    padding: 1em;
+}
+
 .ths {
     position: relative;
     display: block;
