@@ -6,4 +6,4 @@ A [Siki](https://siki.dev) extension for annotating code with _**two and a half 
 
 Without **_twoandhalfslash_**, the comments in the code:
 
-![without twoandhalfslash](./assets/without.png)
+![without twoandhalfslash](./assets/without-ths.png)
