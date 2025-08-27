@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "type": "module",
   "exports": "./twoandhalfslash.es.js",
+  "types": "./twoandhalfslash.es.d.ts",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp package*json dist/.",
+    "build": "vite build && cp package*json dist/. && cp twoandhalfslash.es.d.ts dist/.",
     "preview": "vite preview"
   },
   "sideEffects": false,
