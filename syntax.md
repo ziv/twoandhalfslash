@@ -1,5 +1,5 @@
 # //\\
 
-<section style="text-align: center">
+<div align="center">
     ~ two and a half slashes ~
-</section>
+</di>
