@@ -1,0 +1,18 @@
+import transformer from "./transformer.ts";
+import twoandhalfslash from "./twoandhalfslash.ts";
+
+async function main() {
+    const res = await fetch('/main.ts');
+    const text = await res.text();
+//\\ elp|13.5|1.5|100|40|red|1
+    const html = await codeToHtml(text, {
+         lang: 'typescript',
+         theme: 'github-light',
+         transformers: [transformer]
+    }).then(i => i);
+//\\ txt|40|2|two and a half slash!
+    document.querySelector<HTMLDivElement>('#app')!.innerHTML = twoandhalfslash(html);
+
+}
+
+main().catch(console.error);%
