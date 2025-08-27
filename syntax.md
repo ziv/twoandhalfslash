@@ -2,6 +2,6 @@
 
 <div align="center">
     ~ two and a half slashes ~
-</di>
+</div>
 
-$\color{red}{\textsf{lorem ipsum}}$
+$\color{red}{\textsf{red text}}$
