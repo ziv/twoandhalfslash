@@ -77,6 +77,9 @@ function addComponents(html) {
 }
 
 const transformer = {
+    code(node) {
+      console.log(node);
+    },
     line(node, _) {
         // if (node.children.length !== 1) {
         //     return;
