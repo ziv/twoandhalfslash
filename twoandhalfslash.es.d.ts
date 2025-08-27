@@ -1,3 +1,1 @@
-export declare function twoandhalfslash(str: string): string;
-
-export declare const thsTransformer: any;
+export declare function twoandhalfslash(): any;
