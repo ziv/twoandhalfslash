@@ -104,3 +104,8 @@
   left: 10px;
   border-color: var(--twoandhalfslash-label-border-color) transparent;
 }
+
+
+.ths-ellipse {
+    /*transform: translateY(-2em);*/
+}

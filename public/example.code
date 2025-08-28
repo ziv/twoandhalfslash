@@ -13,3 +13,6 @@ const arr = new Int8Array(10);
 //^ [l^Int8Array^http://developer.mozilla.org^label]
 
 
+// ellipse example
+const longString = "This word will be marked.";
+//^ [e^.............^60^40]
