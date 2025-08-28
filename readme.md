@@ -1,30 +1,58 @@
-# Two And a Half Slashes
+<div align="center">
 
-A [Siki](https://siki.dev) extension for annotating code with _**two and a half
-slashes**_ comments.
+<h1>//^</h1>
 
-Without **_twoandhalfslash_**, the comments in the code:
+</div>
 
-![without twoandhalfslash](./assets/without-ths.png)
+<div align="center">
+<i>two and a half slashes</i>
+</div>
 
-With **_twoandhalfslash_**:
+A [Siki](https://siki.dev) extension for annotating code with
+_**twoandhalfslash**_ comments.
 
-![screenshot](./assets/screenshot.png)
+## Syntax
 
-## Installation
+* Start a comment (prefix) with `//^` (two slashes, a caret, and a space).
+* After the prefix, the command is annotated in square brackets `[]`.
+* The arguments are separated by carets `^`.
+* The first argument is the command name.
 
-```shell
-npm install -D shiki twoandhalfslash
+```
+//^ [command^arg1^arg2^...]
 ```
 
-## Usage
+All annotations require additional CSS to be applied.
 
-```ts
-import { codeToHtml } from "shiki";
-import { twoandhalfslash } from "twoandhalfslash";
+#### Banner
 
-codeToHtml(code, {
-  theme: "nord",
-  extensions: [twoandhalfslash()],
-});
+Add a block element with the content will replace the comment. Add `ths-banner` class to the parent element.
+
+```javascript
+//^ [b^content]
 ```
+
+#### Floating Label
+
+Add a floating label to an element under the cursor (`^`). Add `ths-floater` class to the parent element.
+
+```javascript
+const date = new Date();
+//^ [f^..........^content]
+```
+
+#### Linker
+
+Convert text into a link. First argument is the text to be converted, second argument is the URL, and a third argument
+is the link title.
+
+```javascript
+const arr = new Int8Array(10);
+//^ [l^Int8Array^https://developer.mozilla.org^check out docs]
+```
+
+### Example
+
+The results of the above examples with CSS applied:
+
+![Example of twoandhalfslash extension](./assets/example.png)
