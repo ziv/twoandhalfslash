@@ -1,6 +1,7 @@
 # Two And a Half Slashes
 
-A [Siki](https://siki.dev) extension for annotating code with _**two and a half slashes**_ comments.
+A [Siki](https://siki.dev) extension for annotating code with _**two and a half
+slashes**_ comments.
 
 Without **_twoandhalfslash_**, the comments in the code:
 
@@ -19,11 +20,11 @@ npm install -D shiki twoandhalfslash
 ## Usage
 
 ```ts
-import {codeToHtml} from "shiki";
-import {twoandhalfslash} from "twoandhalfslash";
+import { codeToHtml } from "shiki";
+import { twoandhalfslash } from "twoandhalfslash";
 
 codeToHtml(code, {
-    theme: "nord",
-    extensions: [twoandhalfslash()]
+  theme: "nord",
+  extensions: [twoandhalfslash()],
 });
 ```

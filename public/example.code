@@ -1,17 +1,15 @@
-import "./style.css";
-import {codeToHtml} from 'shiki'
-import {thsTransformer, twoandhalfslash} from "./lib.js";
 
-//\\ elp|40|-2.5|140|50|red|1
-const options = {theme: 'nord', lang: 'javascript', transformers: [thsTransformer]};
+// banner example
+//^ [b^Banner]
 
-async function main() {
-    const res = await fetch('/example.code');
-    const code = await res.text();
-    const html = await codeToHtml(code, options);
-    //\\ txt|30|2|two and a half slash!
-    document.querySelector('#app').innerHTML = twoandhalfslash(html);
-}
 
-main().catch(console.error);
+// floater example
+const date = new Date();
+//^ [f^..........^date object]
+
+
+// linker example
+const arr = new Int8Array(10);
+//^ [l^Int8Array^http://developer.mozilla.org^label]
+
 
