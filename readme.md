@@ -1,12 +1,11 @@
 <div align="center">
 
 <h1>//^</h1>
-
-</div>
-
-<div align="center">
 <i>two and a half slashes</i>
 </div>
+
+
+---
 
 A [Siki](https://siki.dev) extension for annotating code with
 _**twoandhalfslash**_ comments.
@@ -20,7 +19,7 @@ npm instsall twoandhalfslash
 Add transformer to your Shiki config:
 
 ```javascript
-import { codeToHtml } from "shiki";
+import {codeToHtml} from "shiki";
 
 const html = codeToHtml(code, {
     theme: "github-light",
