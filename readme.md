@@ -11,6 +11,26 @@
 A [Siki](https://siki.dev) extension for annotating code with
 _**twoandhalfslash**_ comments.
 
+## Usage
+
+```shell
+npm instsall twoandhalfslash
+```
+
+Add transformer to your Shiki config:
+
+```javascript
+import { codeToHtml } from "shiki";
+
+const html = codeToHtml(code, {
+    theme: "github-light",
+    lang: "javascript",
+    transformers: [
+        twoandhalfslash(),
+    ],
+});
+```
+
 ## Syntax
 
 * Start a comment (prefix) with `//^` (two slashes, a caret, and a space).
