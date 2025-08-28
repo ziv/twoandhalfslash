@@ -1,4 +1,4 @@
-import type {Element, ElementContent, Text} from "hast";
+import type { Element, ElementContent, Text } from "hast";
 
 export function text(
   value: string,
@@ -23,6 +23,6 @@ export function element(
 }
 
 export function update(el: Element, children: ElementContent[]) {
-    el.properties = {};
-    el.children = children;
+  el.properties = {};
+  el.children = children;
 }
