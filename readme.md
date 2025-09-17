@@ -13,7 +13,7 @@ _**twoandhalfslash**_ comments.
 ## Usage
 
 ```shell
-npm instsall twoandhalfslash
+npm install twoandhalfslash
 ```
 
 Add transformer to your Shiki config:
