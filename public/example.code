@@ -1,18 +1,24 @@
 
-// banner example
-//^ [b^Banner]
+// banner example //^ b^Banner
+
 
 
 // floater example
-const date = new Date();
-//^ [f^..........^date object]
+const date = new Date(); //^ d^-40,-40^date object
+
+
+
+
+
+const date = new Date(); //^ u^-40,20^date object
+
 
 
 // linker example
 const arr = new Int8Array(10);
-//^ [l^Int8Array^http://developer.mozilla.org^label]
+//^ l^Int8Array^http://developer.mozilla.org^label
 
 
 // ellipse example
 const longString = "This word will be marked.";
-//^ [e^.............^60^40]
+//^ e^.............^60^40

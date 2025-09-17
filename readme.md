@@ -7,8 +7,7 @@
 
 ---
 
-A [Siki](https://siki.dev) extension for annotating code with
-_**twoandhalfslash**_ comments.
+A [Siki](https://siki.dev) extension for annotating code with _**twoandhalfslash**_ comments.
 
 ## Usage
 
@@ -32,43 +31,37 @@ const html = codeToHtml(code, {
 
 ## Syntax
 
-* Start a comment (prefix) with `//^` (two slashes, a caret, and a space).
-* After the prefix, the command is annotated in square brackets `[]`.
-* The arguments are separated by carets `^`.
-* The first argument is the command name.
+Twoandhalfslash comments starts with `//^` (two slashes, a caret, and a space).
 
-```
-//^ [command^arg1^arg2^...]
-```
-
-All annotations require additional CSS to be applied.
+## Commands
 
 #### Banner
 
-Add a block element with the content will replace the comment. Add `ths-banner` class to the parent element.
+Replace the comment with a block element containing the content. Add `ths-banner` class to the parent element.
 
 ```javascript
-//^ [b^content]
+//^ b^content
 ```
 
-#### Floating Label
+#### Floating Label Pointing Up
 
-Add a floating label to an element under the cursor (`^`). Add `ths-floater` class to the parent element.
+Replace the comment with pointing up floating label. Add `ths-floater-up` class to the parent element.
 
 ```javascript
 const date = new Date();
-//^ [f^..........^content]
+//^ u^0,0^content
 ```
 
-#### Linker
+#### Floating Label Pointing Down
 
-Convert text into a link. First argument is the text to be converted, second argument is the URL, and a third argument
-is the link title.
+Replace the comment with pointing up floating label. Add `ths-floater-up` class to the parent element.
 
 ```javascript
-const arr = new Int8Array(10);
-//^ [l^Int8Array^https://developer.mozilla.org^check out docs]
+const date = new Date();
+//^ d^0,0^content
 ```
+
+    still in development...
 
 ### Example
 

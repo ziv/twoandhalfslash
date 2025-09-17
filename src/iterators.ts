@@ -1,14 +1,25 @@
 import type {Element} from "hast";
 
 export function* lines(el: Element): Generator<Element> {
-  for (const child of el.children) {
-    if (child.type !== "element") {
-      continue;
+    for (const child of el.children) {
+        if (child.type !== "element") {
+            continue;
+        }
+        // child is line
+        yield child;
     }
-    // child is line
-    yield child;
-  }
 }
+
+// export function* recursive(el: Element): Generator<Element> {
+//     for (const child of el.children ?? []) {
+//         // if (child.type !== "element") {
+//         //     continue;
+//         // }
+//         yield child;
+//         yield* recursive(child);
+//     }
+// }
+
 //
 // export function search(term: string, root: Element): Element | null {
 //   // if my first child is a text node with the value, I'm the one

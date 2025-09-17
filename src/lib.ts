@@ -1,10 +1,11 @@
 import type {Element, ElementContent, Text} from "hast";
 import type {ShikiTransformer} from "shiki";
 import {lines} from "./iterators.ts";
-import {element, text, update} from "./elements.ts";
-import {ellipse} from "./ellipse.ts";
+import transformFloating from "./transform-floating.ts";
+import transformBanner from "./transform-banner.ts";
+// import {element, text} from "./elements.ts";
 
-const TWOANDHALF = /\/\/\^ \[(.+)]/;
+const TWOANDHALF = /\/\/\^ (.+)/;
 
 /**
  * fetch the element that wrap the `//^` comment
@@ -33,9 +34,11 @@ export function twoandhalfslash(): ShikiTransformer {
     return {
         name: "twoandhalfs",
         code(node: Element) {
-            const linesStore: Element[] = [];
             for (const line of lines(node)) {
-                linesStore.push(line);
+                if (line.type !== "element") {
+                    continue;
+                }
+                // linesStore.push(line);
                 const comment = getTwoandhalfslash(line);
                 if (!comment) {
                     continue;
@@ -45,71 +48,82 @@ export function twoandhalfslash(): ShikiTransformer {
                     continue;
                 }
                 const [command, ...args] = match[1].split("^");
-                // console.log(command, args);
-
+                console.log(command, args);
                 switch (command) {
-                    case "b":
-                        // banner
-                        update(
-                            comment[0],
-                            [element("span", [text(args[0])], {class: ["ths-banner"]})],
-                        );
+                    case 'b':
+                        transformBanner(comment[0], args);
                         break;
-                    case "f":
-                        const floaterPad = " ".repeat(args[0].length + 6);
-                        update(
-                            comment[0],
-                            [
-                                element("span", [text(floaterPad)]),
-                                element("span", [text(args[1])], {class: ["ths-floater"]}),
-                            ],
-                        );
+                    case 'd':
+                        transformFloating(comment[0], args, 'down');
                         break;
-
-                    case "e":
-                        const [pad, rx, ry, params] = args;
-                        const ellipsePad = " ".repeat(pad.length + 5);
-                        update(comment[0], [
-                            element("span", [text(ellipsePad)]),
-                            ellipse(rx, ry, params),
-                        ]);
-                        break;
-                    case "l":
-                        // search for the text in the previous lines
-                        // replace the element with new link element
-                        const [term, href, title] = args;
-                        for (let i = linesStore.length - 2; i >= 0; i--) {
-                            const line = linesStore[i];
-                            for (const el of line.children) {
-                                if (el.type !== "element") {
-                                    continue;
-                                }
-                                const textEl = el.children?.[0] as Text;
-                                if (
-                                    !textEl || textEl.type !== "text" ||
-                                    !textEl.value.includes(term)
-                                ) {
-                                    continue;
-                                }
-                                // found it!
-                                const parts = textEl.value.split(term, 2);
-                                const before = text(parts[0]);
-                                const after = text(parts[1]);
-                                const linkElement = element("a", [text(term)], {
-                                    href,
-                                    title,
-                                    target: "_blank",
-                                    rel: "noopener",
-                                    class: ["ths-linker"],
-                                });
-                                update(el, [before, linkElement, after]);
-                                update(comment[0], [text("")]);
-                                i = -1; // break outer loop
-                                break;
-                            }
-                        }
+                    case 'u':
+                        transformFloating(comment[0], args, 'up');
                         break;
                 }
+
+                // switch (command) {
+                //     case "b":
+                //         // banner
+                //         update(
+                //             comment[0],
+                //             [element("span", [text(args[0])], {class: ["ths-banner"]})],
+                //         );
+                //         break;
+                //     case "f":
+                //         const floaterPad = " ".repeat(args[0].length + 6);
+                //         update(
+                //             comment[0],
+                //             [
+                //                 element("span", [text(floaterPad)]),
+                //                 element("span", [text(args[1])], {class: ["ths-floater"]}),
+                //             ],
+                //         );
+                //         break;
+                //
+                //     case "e":
+                //         const [pad, rx, ry, params] = args;
+                //         const ellipsePad = " ".repeat(pad.length + 5);
+                //         update(comment[0], [
+                //             element("span", [text(ellipsePad)]),
+                //             ellipse(rx, ry, params),
+                //         ]);
+                //         break;
+                //     case "l":
+                //         // search for the text in the previous lines
+                //         // replace the element with new link element
+                //         const [term, href, title] = args;
+                //         for (let i = linesStore.length - 2; i >= 0; i--) {
+                //             const line = linesStore[i];
+                //             for (const el of line.children) {
+                //                 if (el.type !== "element") {
+                //                     continue;
+                //                 }
+                //                 const textEl = el.children?.[0] as Text;
+                //                 if (
+                //                     !textEl || textEl.type !== "text" ||
+                //                     !textEl.value.includes(term)
+                //                 ) {
+                //                     continue;
+                //                 }
+                //                 // found it!
+                //                 const parts = textEl.value.split(term, 2);
+                //                 const before = text(parts[0]);
+                //                 const after = text(parts[1]);
+                //                 const linkElement = element("a", [text(term)], {
+                //                     href,
+                //                     title,
+                //                     target: "_blank",
+                //                     rel: "noopener",
+                //                     class: ["ths-linker"],
+                //                 });
+                //                 update(el, [before, linkElement, after]);
+                //                 update(comment[0], [text("")]);
+                //                 i = -1; // break outer loop
+                //                 break;
+                //             }
+                //         }
+                //         break;
+                // }
             }
             return node;
         },
