@@ -3,7 +3,6 @@ import type {ShikiTransformer} from "shiki";
 import {lines} from "./iterators.ts";
 import transformFloating from "./transform-floating.ts";
 import transformBanner from "./transform-banner.ts";
-// import {element, text} from "./elements.ts";
 
 const TWOANDHALF = /\/\/\^ (.+)/;
 
@@ -48,7 +47,6 @@ export function twoandhalfslash(): ShikiTransformer {
                     continue;
                 }
                 const [command, ...args] = match[1].split("^");
-                console.log(command, args);
                 switch (command) {
                     case 'b':
                         transformBanner(comment[0], args);
