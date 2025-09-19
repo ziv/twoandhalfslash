@@ -4,21 +4,21 @@
 
 
 // floater example
-const date = new Date(); //^ d^-40,-40^date object
+const date = new Date(); //^ d^date object pointing down^-40px,-45px
+
+
+const date = new Date(); //^ u^date object pointing up^-40px,20px
 
 
 
+const date = new Date(); //^ r^date object pointing end^-250px,-10px
 
 
-const date = new Date(); //^ u^-40,20^date object
+
+const date = new Date(); //^ l^date object pointing start^0px,-10px
 
 
 
 // linker example
-const arr = new Int8Array(10);
-//^ l^Int8Array^http://developer.mozilla.org^label
-
-
-// ellipse example
-const longString = "This word will be marked.";
-//^ e^.............^60^40
+const arr = new Int8Array(10); //^ h^Int8Array^https://developer.mozilla.org^label
+//^ u^using link command^10em,.5em

@@ -59,16 +59,14 @@
     border-radius: var(--twoandhalfslash-banner-border-radius);
 }
 
-.ths-plain {
-    color: var(--twoandhalfslash-plain-color);
-    background: var(--twoandhalfslash-plain-background);
-}
-
-.ths-floater {
+.ths-label {
+    font-family: Caveat, sans-serif;
     position: absolute;
     display: inline-block;
     border-width: 1px;
     border-style: solid;
+    max-width: 16em;
+    text-wrap: auto;
     padding: var(--twoandhalfslash-label-padding);
     border-radius: var(--twoandhalfslash-label-border-radius);
     box-shadow: var(--twoandhalfslash-label-shadow);
@@ -78,15 +76,7 @@
     z-index: var(--twoandhalfslash-label-z-index);
 }
 
-.ths-floater.ths-up {
-    /*transform: var(--twoandhalfslash-label-z-transform);*/
-}
-
-.ths-floater.ths-down {
-    /*transform: translateY(-50px) translateX(0px);*/
-}
-
-.ths-floater:after {
+.ths-label:after {
     content: "";
     position: absolute;
     border-style: solid;
@@ -98,7 +88,7 @@
     border-color: var(--twoandhalfslash-label-background) transparent;
 }
 
-.ths-floater:before {
+.ths-label:before {
     content: "";
     position: absolute;
     border-style: solid;
@@ -110,25 +100,45 @@
     border-color: var(--twoandhalfslash-label-border-color) transparent;
 }
 
-.ths-floater.ths-up:after {
+.ths-label.ths-up:after {
+    top: -5px;
+}
+
+.ths-label.ths-up:before {
     top: -6px;
 }
 
-.ths-floater.ths-up:before {
-    top: -7px;
+
+.ths-label.ths-left:before {
+    left: -8px;
+    top: 1em;
+    transform: rotate(270deg);
 }
 
-.ths-floater.ths-down:after {
+.ths-label.ths-left:after {
+    left: -7px;
+    top: 1em;
+    transform: rotate(270deg);
+}
+
+.ths-label.ths-right:after {
+    left: calc(100% - 2px);
+    top: 1em;
+    transform: rotate(90deg);
+}
+
+.ths-label.ths-right:before {
+    left: calc(100% - 1px);
+    top: 1em;
+    transform: rotate(90deg);
+}
+
+.ths-label.ths-down:after {
     bottom: -6px;
     transform: rotate(180deg);
 }
 
-.ths-floater.ths-down:before {
+.ths-label.ths-down:before {
     bottom: -7px;
     transform: rotate(180deg);
-}
-
-
-.ths-ellipse {
-    /*transform: translateY(-2em);*/
 }

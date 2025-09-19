@@ -37,34 +37,59 @@ Twoandhalfslash comments starts with `//^` (two slashes, a caret, and a space).
 
 #### Banner
 
-Replace the comment with a block element containing the content. Add `ths-banner` class to the parent element.
+Replace the comment with a block element containing the content.
+Add `ths-banner` class to the parent element.
+
+Syntax: `//^ b^content`
+
+Example:
 
 ```javascript
 //^ b^content
 ```
 
-#### Floating Label Pointing Up
+#### Floating Label
 
-Replace the comment with pointing up floating label. Add `ths-floater-up` class to the parent element.
+Replace the comment with a floating label.
+
+Syntax: `//^ d|u|l|r^content[^x,y]`
+
+- Add `ths-floater-up` class to the parent element if pointing up.
+- Add `ths-floater-down` class to the parent element if pointing down.
+- Add `ths-floater-left` class to the parent element if pointing left.
+- Add `ths-floater-right` class to the parent element if pointing right.
+
+Example:
 
 ```javascript
-const date = new Date();
-//^ u^0,0^content
+const date = new Date(); //^ u^date object
+
+const date = new Date(); //^ d^date object^10,-15
 ```
 
-#### Floating Label Pointing Down
+#### Linker
 
-Replace the comment with pointing up floating label. Add `ths-floater-up` class to the parent element.
+Remove the comment and add search the line for the text and wrap it in a link.
+
+Syntax: `//^ h^text^url^label`
+
+Example:
 
 ```javascript
-const date = new Date();
-//^ d^0,0^content
+const date = new Date(); //^ h^Date^https://developer.mozilla.org/.../Global_Objects/Date^MDN
 ```
 
-    still in development...
+## Styling
 
-### Example
+Add the following CSS to your project:
 
-The results of the above examples with CSS applied:
+CDN/NPM/manual install:
 
-![Example of twoandhalfslash extension](./assets/example.png)
+// todo complete this section
+
+```css
+
+
+## More Replacers
+
+Will be happy to get your suggestions or PRs for more cool replacers!
