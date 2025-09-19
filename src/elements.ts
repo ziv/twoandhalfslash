@@ -22,31 +22,43 @@ export function element(
     };
 }
 
-export function ellipse(width: number, height: number): Element {
-    const rx = width / 2;
-    const ry = height / 2;
+export function update(el: Element, children: ElementContent[]) {
+    el.properties = {};
+    el.children = children;
+}
+
+function ellipse(width: string, height: string, params?: string): Element {
+    const p = new URLSearchParams(params ?? "stroke=black&stroke-width=2&fill=none&y=-2");
+
+    const strokeWidth = parseInt(p.get("stroke-width") ?? "2");
+    const yPos = p.get("y") ?? "-2";
+    const xPos = p.get("x") ?? "0";
+
+    const w = parseInt(width, 10);
+    const h = parseInt(height, 10);
+    const rx = w / 2;
+    const ry = h / 2;
     return element("svg",
         [
             element("ellipse", [], {
                 cx: String(rx),
                 cy: String(ry),
-                rx: String(rx),
-                ry: String(ry),
-                stroke: "red",
-                "stroke-width": "2",
-                fill: "none",
+                rx: String(rx - strokeWidth),
+                ry: String(ry - strokeWidth),
+                stroke: p.get("stroke") ?? "black",
+                "stroke-width": p.get("stroke-width") ?? "2",
+                fill: p.get("fill") ?? "none",
             })
         ],
         {
+            style: `transform: translateY(${yPos}em); translateX(${xPos}em);`,
+            class: ["ths-ellipse"],
             xmlns: "http://www.w3.org/2000/svg",
-            width: String(width),
-            height: String(height),
+            width: width,
+            height: height,
             viewBox: `0 0 ${width} ${height}`,
         }
     );
 }
 
-export function update(el: Element, children: ElementContent[]) {
-    el.properties = {};
-    el.children = children;
-}
+
