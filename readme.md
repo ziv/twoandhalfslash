@@ -4,10 +4,10 @@
 <i>two and a half slashes</i>
 </div>
 
-
 ---
 
-A [Siki](https://siki.dev) extension for annotating code with _**twoandhalfslash**_ comments.
+A [Siki](https://siki.dev) extension for annotating code with
+_**twoandhalfslash**_ comments.
 
 ## Usage
 
@@ -18,14 +18,14 @@ npm install twoandhalfslash
 Add transformer to your Shiki config:
 
 ```javascript
-import {codeToHtml} from "shiki";
+import { codeToHtml } from "shiki";
 
 const html = codeToHtml(code, {
-    theme: "github-light",
-    lang: "javascript",
-    transformers: [
-        twoandhalfslash(),
-    ],
+  theme: "github-light",
+  lang: "javascript",
+  transformers: [
+    twoandhalfslash(),
+  ],
 });
 ```
 
@@ -37,8 +37,8 @@ Twoandhalfslash comments starts with `//^` (two slashes, a caret, and a space).
 
 #### Banner
 
-Replace the comment with a block element containing the content.
-Add `ths-banner` class to the parent element.
+Replace the comment with a block element containing the content. Add
+`ths-banner` class to the parent element.
 
 Syntax: `//^ b^content`
 
@@ -88,8 +88,7 @@ CDN/NPM/manual install:
 // todo complete this section
 
 ```css
-
-
 ## More Replacers
 
 Will be happy to get your suggestions or PRs for more cool replacers!
+```

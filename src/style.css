@@ -108,7 +108,6 @@
     top: -6px;
 }
 
-
 .ths-label.ths-left:before {
     left: -8px;
     top: 1em;
@@ -141,4 +140,25 @@
 .ths-label.ths-down:before {
     bottom: -7px;
     transform: rotate(180deg);
+}
+
+* {
+}
+
+article {
+    margin: 0 auto;
+    max-width: 600px;
+    background-color: antiquewhite;
+}
+
+header {
+    h1 {
+        text-align: center;
+        font-family: Mr Dafoe, cursive;
+    }
+
+    h2 {
+        font-family: "Hubballi", sans-serif;
+        text-align: center;
+    }
 }
