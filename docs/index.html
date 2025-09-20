@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Two and a Half Slash</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Hubballi&family=Mr+Dafoe&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet"
+    >
+  <script type="module" crossorigin src="/assets/index-BAjspFTU.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-B7XK8KkK.css">
+</head>
+<body>
+<article>
+    <header>
+        <h1>//^</h1>
+        <h2>Two and a Half Slash</h2>
+    </header>
+    <main>
+        <p>A <a href="https://siki.dev" title="Shiki">Shiki</a> extension for annotating code with
+            <em><strong>twoandhalfslash</strong></em> comments.</p>
+
+
+        <p>
+            Enhance your code samples with rich explanations using <em><strong>twoandhalfslash</strong></em> comments.
+            Inspired by <a href="https://twoslash.netlify.app/">Ttwoslash</a> (that inspired by <a
+                href="https://github.com/orta/typescript-notes/blob/master/systems/testing/fourslash.md">fourslash</a>
+            test system)
+        </p>
+        <h4>❦</h4>
+
+        <h3>Install</h3>
+
+        <section>
+            <div id="install"></div>
+        </section>
+
+
+        <h3>Usage</h3>
+
+        <p>
+            <strong>Shiki</strong> transformer configuration:
+        </p>
+        <section>
+            <div id="shiki"></div>
+        </section>
+
+        <p>
+            <strong>Vitepress</strong> configuration:
+        </p>
+        <section>
+            <div id="vitepress"></div>
+        </section>
+
+
+        <h3>Syntax</h3>
+        <pre class="shell"><code>//^ content[^arrow,x,y]</code></pre>
+
+        <ul>
+            <li><code>content</code> the text to show in the floating label</li>
+            <li><code>arrow</code> the direction the arrow is pointing to, default is left</li>
+            <li><code>x</code> horizontal offset in CSS units, default is 0</li>
+            <li><code>y</code> vertical offset in CSS units, default is 0</li>
+        </ul>
+
+
+        <h3>Example</h3>
+        <p>Go language example</p>
+        <section>
+            <div id="floating-label"></div>
+        </section>
+        <p>
+            The code above produced using the following comments:
+        </p>
+        <pre class="shell"><code>//^ time package^left,1em,-.7em
+
+//^ time object^up,-4em,1.5em</code></pre>
+
+        <h3>Styling</h3>
+
+        CSS variables to customize the appearance:
+        <div id="vars"></div>
+
+        <h4>❦</h4>
+
+        <h3>Story</h3>
+        <p>
+            It started as a joke, a bunch of scripts to enhance internal documentation code
+            examples, inspired by the great work of Twoslash.
+            Some of my coworkers ask me for the scripts, so instead I created this package.
+        </p>
+    </main>
+</article>
+
+<h1>❦</h1>
+</body>
+</html>
