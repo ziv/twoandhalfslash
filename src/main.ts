@@ -37,7 +37,7 @@ const examples = [
 
 async function main() {
     for (const item of examples) {
-        const res = await fetch(item.url);
+        const res = await fetch("https://ziv.github.io/twoandhalfslash" + item.url);
         const code = await res.text();
         const html = codeToHtml(code, {
             theme: "github-light",
