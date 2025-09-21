@@ -9,7 +9,7 @@
 A [Siki](https://siki.dev) extension for annotating code with
 _**twoandhalfslash**_ comments.
 
-A tiny DSL markup for Shiki, ideal for creating code samples with rich explanations.
+A tiny DSL markup for Shiki, ideal for creating code samples with floating labels.
 Inspired by Ttwoslash (that inspired by fourslash test system).
 
 #### ❦
