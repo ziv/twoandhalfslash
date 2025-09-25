@@ -27,7 +27,12 @@
     "twoandhalfslash",
     "shiki",
     "highlight",
-    "source"
+    "source",
+    "code",
+    "label",
+    "markdown",
+    "tags",
+    "annotations"
   ],
   "engines": {
     "node": ">=20.0.0",
