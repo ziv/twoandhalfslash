@@ -1,11 +1,24 @@
+:root {
+    --twoandhalfslash-label-color: #595151;
+    --twoandhalfslash-label-border-color: #8888;
+    --twoandhalfslash-label-border-radius: 0.25em;
+    --twoandhalfslash-label-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
+    --twoandhalfslash-label-background: antiquewhite;
+    --twoandhalfslash-label-padding: 0.6em;
+    --twoandhalfslash-label-z-index: 1000;
+    --twoandhalfslash-label-font-family: sans-serif;
+    --twoandhalfslash-label-font-size: 1em;
+}
+
 .ths-label {
-    font-family: var(--twoandhalfslash-label-font-family), sans-serif;
     position: absolute;
     display: inline-block;
     border-width: 1px;
     border-style: solid;
     max-width: 16em;
     text-wrap: auto;
+    font-family: var(--twoandhalfslash-label-font-family), sans-serif;
+    font-size: var(--twoandhalfslash-label-font-size, 1em);
     padding: var(--twoandhalfslash-label-padding);
     border-radius: var(--twoandhalfslash-label-border-radius);
     box-shadow: var(--twoandhalfslash-label-shadow);
