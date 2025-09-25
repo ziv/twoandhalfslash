@@ -22,6 +22,18 @@ Install the package:
 npm install twoandhalfslash
 ```
 
+### Add Required CSS
+
+Add the following CSS to your project:
+
+```css
+/*
+depending on your bundler, you might need to adjust the path:
+@import "node_modules/twoandhalfslash/default.css";
+*/
+@import "twoandhalfslash/default.css";
+```
+
 ### Shiki
 
 Add transformer to your Shiki config:
@@ -85,4 +97,23 @@ func main() {
 ```
 
 [See the results here](https://ziv.github.io/twoandhalfslash/).
+
+## Styling
+
+You can customize the appearance of the floating labels by overriding the default CSS variables:
+
+```css
+:root {
+    --twoandhalfslash-label-color: #595151;
+    --twoandhalfslash-label-border-color: #8888;
+    --twoandhalfslash-label-border-radius: 0.25em;
+    --twoandhalfslash-label-shadow: 0 0 1em rgba(0, 0, 0, 0.25);
+    --twoandhalfslash-label-background: antiquewhite;
+    --twoandhalfslash-label-padding: 0.6em;
+    --twoandhalfslash-label-z-index: 1000;
+    --twoandhalfslash-label-font-family: sans-serif;
+    --twoandhalfslash-label-font-size: 1em;
+}
+```
+
 

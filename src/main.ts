@@ -13,6 +13,12 @@ const html = codeToHtml(code, {
     ],
 });`;
 
+const USAGE_CSS = `/*
+depending on your bundler, you might need to adjust the path:
+@import "node_modules/twoandhalfslash/default.css";
+*/
+@import "twoandhalfslash/default.css";`;
+
 const USAGE_VITEPRESS = `import {twoandhalfslash} from "twoandhalfslash";
 
 export default defineConfig({
@@ -37,7 +43,7 @@ func main() {
 }
 `;
 
-const USAGE_CSS = `:root {
+const USAGE_VARS = `:root {
     --twoandhalfslash-label-color: #595151;
     --twoandhalfslash-label-border-color: #8888;
     --twoandhalfslash-label-border-radius: 0.25em;
@@ -54,6 +60,11 @@ const examples = [
         id: "#install",
         language: "shell",
         content: `npm install twoandhalfslash`,
+    },
+    {
+        id: "#css",
+        language: "css",
+        content: USAGE_CSS,
     },
     {
         id: "#shiki",
@@ -73,7 +84,7 @@ const examples = [
     {
         id: "#vars",
         language: "css",
-        content: USAGE_CSS,
+        content: USAGE_VARS,
     },
 ];
 
