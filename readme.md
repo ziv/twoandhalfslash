@@ -10,7 +10,8 @@ A [Siki](https://siki.dev) extension for annotating code with
 _**twoandhalfslash**_ comments.
 
 A tiny DSL markup for Shiki, ideal for creating code samples with floating labels.
-Inspired by Ttwoslash (that inspired by fourslash test system).
+Inspired by [Ttwoslash](https://twoslash.netlify.app/) (that inspired
+by [fourslash](https://github.com/orta/typescript-notes/blob/master/systems/testing/fourslash.md) test system).
 
 #### ❦
 
@@ -58,3 +59,26 @@ export default defineConfig({
 ## Syntax
 
 Twoandhalfslash comments starts with `//^` (two slashes, a caret, and a space).
+
+    //^ content[^arrow[,x[,y]]]
+
+## Example
+
+```go
+package main
+
+import (
+	"fmt"
+	"time" //^ time package^left,.5em,-.9em
+)
+
+func main() {
+	fmt.Println("Welcome to the playground!")
+
+	fmt.Println("The time is", time.Now()) //^ time object^up,-4em,1em
+}
+
+```
+
+[See the results here](https://ziv.github.io/twoandhalfslash/).
+
