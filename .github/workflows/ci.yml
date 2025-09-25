@@ -1,4 +1,4 @@
-name: xprng-auto-release
+name: release
 
 on:
   workflow_dispatch:
