@@ -24,8 +24,9 @@
             href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Hubballi&family=Mr+Dafoe&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet"
     >
-  <script type="module" crossorigin src="/twoandhalfslash/assets/index-C0FmradN.js"></script>
-  <link rel="stylesheet" crossorigin href="/twoandhalfslash/assets/index-CWP7KImF.css">
+    <link href="/twoandhalfslash/default.css" rel="stylesheet">
+  <script type="module" crossorigin src="/twoandhalfslash/assets/index-CBdXVA3x.js"></script>
+  <link rel="stylesheet" crossorigin href="/twoandhalfslash/assets/index-iOadiE98.css">
 </head>
 <body>
 <article>
@@ -71,31 +72,31 @@
 
 
         <h3>Syntax</h3>
-        <pre class="shell"><code>//^ content[^arrow,x,y]</code></pre>
+        <pre class="shell"><code>//^ content[^arrow[,x[,y]]]</code></pre>
 
         <ul>
-            <li><code>content</code> the text to show in the floating label</li>
-            <li><code>arrow</code> the direction the arrow is pointing to, default is left</li>
-            <li><code>x</code> horizontal offset in CSS units, default is 0</li>
-            <li><code>y</code> vertical offset in CSS units, default is 0</li>
+            <li><code class="local">content</code> the text to show in the floating label</li>
+            <li><code class="local">arrow</code> the direction the arrow is pointing to, default is left</li>
+            <li><code class="local">x</code> horizontal offset in CSS units, default is 0</li>
+            <li><code class="local">y</code> vertical offset in CSS units, default is 0</li>
         </ul>
 
 
         <h3>Example</h3>
-        <p>Go language example</p>
+        <p>The following comments</p>
+        <p><code class="local">//^ time package^left,.5em,-.9em</code></p>
+        <p><code class="local">//^ time object^up,-4em,1em</code></p>
+        <p>on the following GO language code sample produces the labels:</p>
         <section>
             <div id="floating-label"></div>
         </section>
-        <p>
-            The code above produced using the following comments:
-        </p>
-        <pre class="shell"><code>//^ time package^left,1em,-.7em
-
-//^ time object^up,-4em,1.5em</code></pre>
 
         <h3>Styling</h3>
 
-        CSS variables to customize the appearance:
+        <p>Add the CSS located at <code class="local">node_modules/twoandhalfslash/default.css</code> to your
+            project.
+        </p>
+        <p>CSS variables to customize the appearance:</p>
         <div id="vars"></div>
 
         <h4>❦</h4>
@@ -104,6 +105,8 @@
         <p>
             It started as a joke, a bunch of scripts to enhance internal documentation code
             examples, inspired by the great work of Twoslash.
+        <p>
+        <p>
             Some of my coworkers ask me for the scripts, so instead I created this package.
         </p>
     </main>

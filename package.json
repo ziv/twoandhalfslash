@@ -6,6 +6,7 @@
   "types": "./lib.d.ts",
   "scripts": {
     "dev": "vite",
+    "build-page": "vite build",
     "build": "tsc && vite --config vite.lib.js build && cp package*json dist/. && cp readme.md dist/",
     "preview": "vite preview"
   },
