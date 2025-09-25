@@ -46,6 +46,7 @@ const USAGE_CSS = `:root {
     --twoandhalfslash-label-padding: 0.6em;
     --twoandhalfslash-label-z-index: 1000;
     --twoandhalfslash-label-font-family: Caveat;
+    --twoandhalfslash-label-font-size: 1.2em;
 }`;
 
 const examples = [
