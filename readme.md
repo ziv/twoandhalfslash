@@ -10,8 +10,7 @@ A [Siki](https://siki.dev) extension for annotating code with
 _**twoandhalfslash**_ comments.
 
 A tiny DSL markup for Shiki, ideal for creating code samples with floating labels.
-Inspired by [Ttwoslash](https://twoslash.netlify.app/) (that inspired
-by [fourslash](https://github.com/orta/typescript-notes/blob/master/systems/testing/fourslash.md) test system).
+Inspired by [Ttwoslash](https://twoslash.netlify.app/).
 
 #### ❦
 
