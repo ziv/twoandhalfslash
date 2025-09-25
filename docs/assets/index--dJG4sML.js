@@ -19,7 +19,11 @@ const html = codeToHtml(code, {
     transformers: [
         twoandhalfslash(), //^ add to transformers list^left,0,-.9em
     ],
-});`,$o=`import {twoandhalfslash} from "twoandhalfslash";
+});`,$o=`/*
+depending on your bundler, you might need to adjust the path:
+@import "node_modules/twoandhalfslash/default.css";
+*/
+@import "twoandhalfslash/default.css";`,Ho=`import {twoandhalfslash} from "twoandhalfslash";
 
 export default defineConfig({
     markdown: {
@@ -27,7 +31,7 @@ export default defineConfig({
             twoandhalfslash(), //^ add to markdown configuration^up,-4em,1.3em
         ],
     },
-});`,Ho=`package main
+});`,Wo=`package main
 
 import (
 	"fmt"
@@ -39,7 +43,7 @@ func main() {
 
 	fmt.Println("The time is", time.Now()) //^ time object^up,-4em,1em
 }
-`,Wo=`:root {
+`,Fo=`:root {
     --twoandhalfslash-label-color: #595151;
     --twoandhalfslash-label-border-color: #8888;
     --twoandhalfslash-label-border-radius: 0.25em;
@@ -47,5 +51,6 @@ func main() {
     --twoandhalfslash-label-background: antiquewhite;
     --twoandhalfslash-label-padding: 0.6em;
     --twoandhalfslash-label-z-index: 1000;
-    --twoandhalfslash-label-font-family: Caveat;
-}`,Fo=[{id:"#install",language:"shell",content:"npm install twoandhalfslash"},{id:"#shiki",language:"javascript",content:Uo},{id:"#vitepress",language:"javascript",content:$o},{id:"#floating-label",language:"go",content:Ho},{id:"#vars",language:"css",content:Wo}];async function zo(){for(const n of Fo){const e=Bo(n.content,{theme:"github-light",lang:n.language,transformers:[jo()]});document.querySelector(n.id).innerHTML=await e}}zo().catch(console.error);
+    --twoandhalfslash-label-font-family: sans-serif;
+    --twoandhalfslash-label-font-size: 1.2em;
+}`,zo=[{id:"#install",language:"shell",content:"npm install twoandhalfslash"},{id:"#css",language:"css",content:$o},{id:"#shiki",language:"javascript",content:Uo},{id:"#vitepress",language:"javascript",content:Ho},{id:"#floating-label",language:"go",content:Wo},{id:"#vars",language:"css",content:Fo}];async function qo(){for(const n of zo){const e=Bo(n.content,{theme:"github-light",lang:n.language,transformers:[jo()]});document.querySelector(n.id).innerHTML=await e}}qo().catch(console.error);

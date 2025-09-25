@@ -51,7 +51,7 @@ const USAGE_VARS = `:root {
     --twoandhalfslash-label-background: antiquewhite;
     --twoandhalfslash-label-padding: 0.6em;
     --twoandhalfslash-label-z-index: 1000;
-    --twoandhalfslash-label-font-family: Caveat;
+    --twoandhalfslash-label-font-family: sans-serif;
     --twoandhalfslash-label-font-size: 1.2em;
 }`;
 
