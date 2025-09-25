@@ -61,6 +61,11 @@ Twoandhalfslash comments starts with `//^` (two slashes, a caret, and a space).
 
     //^ content[^arrow[,x[,y]]]
 
+- `content` - the text to show in the floating label
+- `arrow` - the direction the arrow is pointing to, default is left
+- `x` horizontal offset in CSS units, default is 0
+- `y` vertical offset in CSS units, default is 0
+
 ## Example
 
 ```go
