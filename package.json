@@ -1,6 +1,6 @@
 {
   "name": "twoandhalfslash",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "type": "module",
   "exports": "./lib.js",
   "types": "./lib.d.ts",
